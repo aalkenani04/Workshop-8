@@ -1,6 +1,6 @@
 ---
 title: "Lab 08 - Predicting rain"
-author: "INSERT NAME HERE"
+author: "Ali Al Kenani"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -19,7 +19,7 @@ weather <- read.csv("data/weatherAUS.csv", header = TRUE)
 
 We will start by transform any character variables that need to be transformed into categorical. Use the following code to identify them and trasform them into factors.
 
-```{r mutate-char}
+```{r mutate-char, eval = FALSE}
 weather %>% 
   select(where(is.character),-Date) %>% names()
 weather <- weather %>% 
@@ -195,7 +195,7 @@ weather_pred2 %>%
 
 4. Now focus on the second model. Consider several thresholds for predicting `RainTomorrow` and look at the number of false positives and false negatives. For example:
 
-```{r}
+```{r eval= FALSE}
 cutoff_prob <- 0.5
 weather_pred2 %>%
   mutate(
